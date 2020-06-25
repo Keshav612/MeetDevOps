@@ -27,11 +27,12 @@
 <sonar.jdbc.driver>your DB driver</sonar.jdbc.driver>
 <sonar.jdbc.username>DB username</sonar.jdbc.username>
 <sonar.jdbc.password>DB password</sonar.jdbc.password>        -->              
-
-            </properties>
-        </profile>
-     </profiles>
-</distributionManagement>
+<distributionManagement>
+    <snapshotRepository>
+      <id>nexus01</id>
+      <url>http://localhost:8081/repository/repo2/</url>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
   <plugins>
     
@@ -49,8 +50,8 @@
         </execution>
       </executions>
       <configuration>
-        <serverId>MeetDev</serverId>
-        <nexusUrl>http://localhost:8081/repository/MeetDevops/</nexusUrl>
+        <serverId>nexus01</serverId>
+        <nexusUrl>http://localhost:8081/</nexusUrl>
         <skipStaging>true</skipStaging>
       </configuration>
     </plugin>
