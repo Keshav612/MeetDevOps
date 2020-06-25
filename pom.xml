@@ -31,4 +31,38 @@
             </properties>
         </profile>
      </profiles>
+</distributionManagement>
+  <build>
+  <plugins>
+    
+    <plugin>
+      <groupId>org.sonatype.plugins</groupId>
+      <artifactId>nexus-staging-maven-plugin</artifactId>
+      <version>1.5.1</version>
+      <executions>
+        <execution>
+          <id>default-deploy</id>
+          <phase>deploy</phase>
+          <goals>
+             <goal>deploy</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <serverId>MeetDev</serverId>
+        <nexusUrl>http://localhost:8081/repository/MeetDevops/</nexusUrl>
+        <skipStaging>true</skipStaging>
+      </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <!--<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>-->
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+  </plugins>
+  </build>
 </project>
