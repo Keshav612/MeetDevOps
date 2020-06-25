@@ -8,6 +8,7 @@ class Pallindrome
       //int n = in.nextInt(); 
       //for the changes2
       //changes to be published
+      //nex
       int n=12321;
       temp=n;    
       while(n>0){    
