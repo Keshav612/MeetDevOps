@@ -5,7 +5,8 @@ class Pallindrome
       int r,sum=0,temp;    
       //Scanner in = new Scanner(System.in);
       //System.out.println("Enter the number");
-      //int n = in.nextInt();  
+      //int n = in.nextInt(); 
+      //for changes
       int n=12321;
       temp=n;    
       while(n>0){    
