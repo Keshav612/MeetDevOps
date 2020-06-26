@@ -6,8 +6,8 @@
   	        
 <distributionManagement>
     <snapshotRepository>
-      <id>nexus01</id>
-      <url>http://localhost:8081/repository/nexus_repo/</url>
+      <id>Meetdevops</id>
+      <url>http://localhost:8081/repository/MeetDevops/</url>
     </snapshotRepository>
 </distributionManagement>
   <build>
