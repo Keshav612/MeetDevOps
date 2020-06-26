@@ -7,12 +7,19 @@
 <distributionManagement>
     <snapshotRepository>
       <id>nexus01</id>
-      <url>http://localhost:8081/repository/repo2/</url>
+      <url>http://localhost:8081/repository/nexus_repo/</url>
     </snapshotRepository>
-  </distributionManagement>
+</distributionManagement>
   <build>
-  <plugins>
-    
+  <plugins> 
+	  <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-deploy-plugin</artifactId>
+    <version>3.0.0-M1</version>
+   <configuration>
+      <skip>true</skip>
+   </configuration>
+</plugin>
     <plugin>
       <groupId>org.sonatype.plugins</groupId>
       <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -43,4 +50,24 @@
       </plugin>
   </plugins>
   </build>
+  <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url> http://localhost:9000 </sonar.host.url>
+                 <maven.compiler.source>1.8</maven.compiler.source>
+     			 <maven.compiler.target>1.8</maven.compiler.target>
+	<!--Uncomment below few lines if you are using external databases(Oracle/DB2/Mysql) -->
+ <!--  <sonar.jdbc.url>your database url</sonar.jdbc.url>
+<sonar.jdbc.driver>your DB driver</sonar.jdbc.driver>
+<sonar.jdbc.username>DB username</sonar.jdbc.username>
+<sonar.jdbc.password>DB password</sonar.jdbc.password>        -->              
+
+            </properties>
+        </profile>
+     </profiles>
 </project>
