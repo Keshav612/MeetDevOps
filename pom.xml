@@ -34,7 +34,7 @@
         </execution>
       </executions>
       <configuration>
-        <serverId>nexus01</serverId>
+        <serverId>MeetDevops</serverId>
         <nexusUrl>http://localhost:8081/</nexusUrl>
         <skipStaging>true</skipStaging>
       </configuration>
